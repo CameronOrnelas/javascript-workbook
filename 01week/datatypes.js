@@ -19,7 +19,12 @@ function strToNumber(str){
 console.log(typeof strToNumber('hello'));
 
 //this is my method to take in different datatypes and prints out the types
-console.log(typeof numToString('typeofmethod'));
+function differentTypes(x,y){
+  if(x||y){
+    return(x + y);
+  }
+}
+typeof differentTypes(4,'0');
 
 //this is my method to add two numbers together
 function sumOfTwoNumber(num1, num2){
@@ -27,17 +32,25 @@ function sumOfTwoNumber(num1, num2){
 }
 
 //this is my method to run only when two things are true
-
-if (5>2 && 4>2) {
-  console.log('Well Done!');
+function twoTruths(x,y){
+  if(x && y){
+    return('true');
+  }
 }
+twoTruths(2,5);
 
 //this is my method to run when one or two things are true
-if (2>2 || 8===8) {
-  console.log('Well Done!');
+function oneTruth(x,y){
+  if(x || y){
+    return('true');
+  }
 }
+oneTruth(2,0);
 
 //this is my method to run when two things are false
-if (!2===false && !8===false) {
-  console.log('Well Done!');
+function twoFalse(x,y){
+  if(!x && !y){
+    return('false');
+  }
 }
+twoFalse('',0);
