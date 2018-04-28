@@ -8,11 +8,43 @@ const rl = readline.createInterface({
 });
 
 
-function rockPaperScissors(hand1, hand2) {
+// function rockPaperScissors(hand1, hand2) {
 
-  // Write code here
+  // This will name a function that takes in the arguements of the game
+const rockPaperScissors=(hand1,hand2)=>{
 
-}
+  // This will start running through all of the conditional statements for wins, losses and a tie
+  if(hand1===hand2){
+    return 'Its a tie!';
+  }
+
+  if(hand1==='scissors' && hand2==='rock'){
+    return 'hand2 wins';
+  }
+  else{
+    return 'hand1 wins';
+  }
+
+
+  if(hand1==="rock" && hand2==='scissors'){
+    return 'hand1 wins';
+  }
+  else{
+    return 'paper wins';
+  }
+
+
+  if(hand1==='paper' && hand2==='rock'){
+    return 'hand1 wins';
+  }
+  else{
+    return 'scissors wins';
+  }
+
+};
+
+  // This function will output the outcome of the game based on the arguements
+rockPaperScissors('','');
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
