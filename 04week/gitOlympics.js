@@ -5,4 +5,4 @@ const printListOfOlympians = (array)=>{
 });
 }
 
-printListOfOlympians(['Michael Phelps','Larisa Latynina','Paavo Nurmi','Mark Spitz','Carl Lewis'])
+printListOfOlympians(['Michael Phelps','Larisa V. Latynina','Paavo Nurmi','Mark Spitz','Carl Lewis'])
