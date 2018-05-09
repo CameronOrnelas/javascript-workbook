@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 });
 
 let board = [];
-let solution = '';
+let solution = 'abcd';
 let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
 function printBoard() {
@@ -28,14 +28,65 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateHint() {
+function generateHint(guess) {
   // your code here
+  const guessArr = guess.split('');
+  const solutionArr = solution.split('');
+  let rightPlaceRightLetter = 0;
+  let wrongPlaceRightLetter = 0;
+
+  guessArr.forEach((item,index)=> {
+    if(solutionArr[index]==item){
+      rightPlaceRightLetter == rightPlaceRightLetter +1;
+    }else if(solutionArr.indexOf(item) != -1){
+      wrongPlaceRightLetter == wrongPlaceRightLetter +1;
+    }
+  });
+
+  console.log(`${rightPlaceRightLetter} right place right letter${wrongPlaceRightLetter} wrong place right letter`);
+
+  //Sample: 2 right place, right letter, one right color wrong letter
 }
+
+
+const isValidGuess =(guess)=>{
+    const guessArr = guess.split('');
+
+  let allLettersAcceptable = true;
+  guessArr.forEach((item,index)=> {
+    console.log(item, 'item');
+    if (letters.indexOf(item) == -1){
+      allLettersAcceptable = false;
+    }
+  });
+  return guess.length === 4 && allLettersAcceptable;
+};
 
 function mastermind(guess) {
   solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
+
+  if(isValidGuess(guess)){
+    console.log('keep going');
+    if(solution == guess){
+      console.log('You Won');
+      //This is the board reset
+      board = [];
+    }else{
+      generateHint(guess);
+      board.push(guess);
+      if(board.length > 9 ){
+        console.log('You Lose');
+        board = [];
+      }
+      console.log('not the solution, guess again');
+      console.log(printBoard);
+    }
+  }else{
+    console.log('invalid guess');
+  }
 }
+
 
 
 function getPrompt() {
