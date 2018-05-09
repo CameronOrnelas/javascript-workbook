@@ -63,7 +63,7 @@ const isValidGuess =(guess)=>{
 };
 
 function mastermind(guess) {
-  solution = 'abcd'; // Comment this out to generate a random solution
+  // solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
 
   if(isValidGuess(guess)){
