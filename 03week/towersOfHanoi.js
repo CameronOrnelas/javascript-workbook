@@ -13,15 +13,20 @@ let stacks = {
   c: []
 };
 
+let startStack = ['a', 'b', 'c'];
+let endStack = ['a','b','c'];
+
 function printStacks() {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
+function movePiece(stacks) {
   // Your code here
-
+  if(startStack == 'a'){
+    console.log(stacks.a.pop());
+  }
 }
 
 function isLegal() {
