@@ -28,8 +28,14 @@ for(i = 0; i < keys.length; i++){
 //While Loop to return numbers 1-1000
 let num = 1;
 
-while(num <= 100){
+while(num <= 1000){
   console.log(num++);;
 };
 
-//
+//Do While Loop to return numbers 1-1000
+let num2 = 0;
+
+do{;
+  num2++;
+  console.log(num2)
+}while(num2 < 1000);
