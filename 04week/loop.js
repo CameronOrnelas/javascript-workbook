@@ -24,3 +24,12 @@ for(i = 0; i < keys.length; i++){
     console.log(persons.birthDate);
   }
 };
+
+//While Loop to return numbers 1-1000
+let num = 1;
+
+while(num <= 100){
+  console.log(num++);;
+};
+
+//
