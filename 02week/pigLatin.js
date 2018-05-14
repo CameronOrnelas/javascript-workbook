@@ -7,12 +7,31 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
+//This function will take in a word and translate to pigLatin  given the parameters
 function pigLatin(word) {
 
-  // Your code here
+  const translate = (word) => {
+    let array = word.split('');
+    let vowels = ['a','e','i','o','u'];
+    let newWord = '';
+    for(let i = 0; i < vowels.length; i++) {
+      for(let y = 0; y < word.length; y++) {
+        if(word[y] === vowels[i]) {
+          for(let x = y; x < word.length; x++){
+            newWord = newWord + word[x];
+          }
+          for(let z = 0; z < y; z++){
+            newWord = newWord + word[n];
+          }
+          return newWord + "ay";
+        }
+      }
+    }
+  }
 
-}
+  translate("duke");
+
+};
 
 
 function getPrompt() {
