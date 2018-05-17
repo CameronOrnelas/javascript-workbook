@@ -16,35 +16,30 @@ let stacks = {
 let startStack = ['a', 'b', 'c'];
 let endStack = ['a','b','c'];
 
-function printStacks() {
+const printStacks = ()=> {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
-
-function movePiece(stacks) {
-  // Your code here
-  if(startStack == 'a'){
-    console.log(stacks.a.pop());
-  }
-}
-
-function isLegal() {
-  // Your code here
+//Fucntion to move disks
+const movePiece = (stacks)=> {
 
 }
-
-function checkForWin() {
-  // Your code here
+//Function to check if move is legal
+const isLegal = ()=> {
 
 }
+//Function used to check for win
+const checkForWin = ()=> {
 
-function towersOfHanoi(startStack, endStack) {
-  // Your code here
+
+}
+//Function used to input the functions above to play the game
+const towersOfHanoi = (startStack, endStack)=> {
 
 }
 
-function getPrompt() {
+const getPrompt = ()=> {
   printStacks();
   rl.question('start stack: ', (startStack) => {
     rl.question('end stack: ', (endStack) => {
