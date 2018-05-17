@@ -39,9 +39,13 @@ const isLegal = (startStack, endStack)=> {
 }
 //Function used to check for win
 const checkForWin = ()=> {
+  if(stacks.c.length == 4){
+    return true;
+  }else{
+    return false;
+  }
 
-
-}
+};
 //Function used to input the functions above to play the game
 const towersOfHanoi = (startStack, endStack)=> {
 
