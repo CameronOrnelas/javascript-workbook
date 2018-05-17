@@ -22,8 +22,8 @@ const printStacks = ()=> {
   console.log("c: " + stacks.c);
 }
 //Fucntion to move disks
-const movePiece = (stacks)=> {
-
+const movePiece = (startStack,endStack)=> {
+  return stacks[endStack].push(stacks[startStack].pop());
 }
 //Function to check if move is legal
 const isLegal = ()=> {
