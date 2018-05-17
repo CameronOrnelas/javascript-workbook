@@ -13,33 +13,54 @@ let stacks = {
   c: []
 };
 
-function printStacks() {
+let startStack = ['a', 'b', 'c'];
+let endStack = ['a','b','c'];
+
+const printStacks = ()=> {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
-
-function movePiece() {
-  // Your code here
-
+//Fucntion to move disks
+const movePiece = (startStack,endStack)=> {
+  return stacks[endStack].push(stacks[startStack].pop());
 }
+//Function to check if move is legal
+const isLegal = (startStack, endStack)=> {
+  let startTest = stacks[startStack][stacks[startStack].length - 1];
+  let endTest = stacks[endStack][stacks[endStack].length - 1];
 
-function isLegal() {
-  // Your code here
-
+  if ((startTest < endTest) || (stacks[endStack].length === 0)) {
+    return true;
+  } else {
+    console.log('Wrong Move');
+    return false;
+  }
 }
+//Function used to check for win
+const checkForWin = ()=> {
+  if(stacks.c.length == 4){
+    return true;
+  }else{
+    return false;
+  }
 
-function checkForWin() {
-  // Your code here
+};
+//Function used to input the functions above to play the game
+//First run isLegal to check if the move is legal
+//Next run movePiece to move the disk
+//Last check for Win
+const towersOfHanoi = (startStack, endStack)=> {
+  if(isLegal(startStack,endStack)){
+    movePiece(startStack,endStack);
+  }else{
+    return 'Wrong Move'
+  }if(checkForWin()){
+    console.log('You Win!')
+  }
+};
 
-}
-
-function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
-}
-
-function getPrompt() {
+const getPrompt = ()=> {
   printStacks();
   rl.question('start stack: ', (startStack) => {
     rl.question('end stack: ', (endStack) => {
