@@ -47,9 +47,18 @@ const checkForWin = ()=> {
 
 };
 //Function used to input the functions above to play the game
+//First run isLegal to check if the move is legal
+//Next run movePiece to move the disk
+//Last check for Win
 const towersOfHanoi = (startStack, endStack)=> {
-
-}
+  if(isLegal(startStack,endStack)){
+    movePiece(startStack,endStack);
+  }else{
+    return 'Wrong Move'
+  }if(checkForWin()){
+    console.log('You Win!')
+  }
+};
 
 const getPrompt = ()=> {
   printStacks();
