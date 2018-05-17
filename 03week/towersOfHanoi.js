@@ -26,8 +26,16 @@ const movePiece = (startStack,endStack)=> {
   return stacks[endStack].push(stacks[startStack].pop());
 }
 //Function to check if move is legal
-const isLegal = ()=> {
+const isLegal = (startStack, endStack)=> {
+  let startTest = stacks[startStack][stacks[startStack].length - 1];
+  let endTest = stacks[endStack][stacks[endStack].length - 1];
 
+  if ((startTest < endTest) || (stacks[endStack].length === 0)) {
+    return true;
+  } else {
+    console.log('Wrong Move');
+    return false;
+  }
 }
 //Function used to check for win
 const checkForWin = ()=> {
