@@ -16,7 +16,11 @@ class CrewMember {
     this.specialSkill = skill;
     this.ship = ship;
   }
-}
+  enterShip(shipName){
+    this.ship = shipName;
+    shipName.crew.push(this);
+    }
+};
 
 
 class Ship {
