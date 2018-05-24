@@ -19,7 +19,7 @@ class CrewMember {
   enterShip(shipName){
     this.ship = shipName;
     shipName.crew.push(this);
-    }
+  }
 };
 
 
@@ -30,6 +30,14 @@ class Ship {
     this.ability = ability;
     this.crew = [];
   }
+  missionStatement(Message) {
+    if(this.crew.length){
+      return this.ability;
+    }else{
+      return 'Cant perform mission';
+    }
+  }
+};
 
 
 const crewMember1 = new CrewMember ('Rick Martinez','pilot','chemistry');
