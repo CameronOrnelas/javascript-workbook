@@ -50,8 +50,14 @@ function verticalWin() {
 }
 
 function diagonalWin() {
-  // Your code here
-}
+  if(board[0][0] == playerTurn && board [1][1] == playerTurn && board [2][2] == playerTurn){
+    return true;
+  } else if(board[2][0] == playerTurn && board [1][1] == playerTurn && board [0][2] == playerTurn){
+    return true;
+  } else{
+    return false
+  }
+};
 
 function checkForWin() {
   // Your code here
