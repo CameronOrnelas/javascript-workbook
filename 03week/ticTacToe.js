@@ -60,8 +60,19 @@ function diagonalWin() {
 };
 
 function checkForWin() {
-  // Your code here
-}
+  if(horizontalWin()){
+    console.log('Horizontal Win')
+    return true;
+  }else if(verticalWin()){
+    console.log('Vertical Win')
+    return true;
+  }else if(diagonalWin()){
+    console.log('Diagonal Win')
+    return true;
+  }else{
+    return false;
+  }
+};
 
 function ticTacToe(row, column) {
   // Your code here
