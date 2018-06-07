@@ -12,6 +12,7 @@ let board = [
   [' ', ' ', ' ']
 ];
 
+
 let playerTurn = 'X';
 
 function printBoard() {
@@ -25,7 +26,7 @@ function printBoard() {
 
 function horizontalWin() {
   // Your code here
-  
+
 }
 
 function verticalWin() {
