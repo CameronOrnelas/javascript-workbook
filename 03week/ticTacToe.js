@@ -61,13 +61,13 @@ function diagonalWin() {
 
 function checkForWin() {
   if(horizontalWin()){
-    console.log('Horizontal Win')
+    console.log("Player " + playerTurn + " won the game. Restarting.");
     return true;
   }else if(verticalWin()){
-    console.log('Vertical Win')
+    console.log("Player " + playerTurn + " won the game. Restarting.");
     return true;
   }else if(diagonalWin()){
-    console.log('Diagonal Win')
+    console.log("Player " + playerTurn + " won the game. Restarting.");
     return true;
   }else{
     return false;
