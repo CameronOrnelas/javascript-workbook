@@ -74,24 +74,60 @@ function checkForWin() {
   }
 };
 
-function ticTacToe(row, column) {
-  if(board[row][column] == ''){
-    board [row][column] = playerTurn;
-  }else if(checkForWin()){
-    board = [
-      [' ', ' ', ' '],
-      [' ', ' ', ' '],
-      [' ', ' ', ' ']
-    ];
-    playerTurn = 'X';
-  }else{
-    if(playerTurn = 'X'){
-      playerTurn = 'O';
-    }else{
-      playerTurn = 'X';
-    }
+function checkForFullBoard() {
+  if (board[0][0] !== ' ' && board[0][1] !== ' ' && board[0][2] !== ' ' && board[1][0] !== ' ' && board[1][1] !== ' ' && board[1][2] !== ' ' && board[2][0] !== ' ' && board[2][1] !== ' ' && board[2][2] !== ' ') {
+    return true;
+  }
+
+  else {
+    return false;
   }
 }
+
+function checkForTie() {
+  if (checkForFullBoard() && checkForWin() === false) {
+    console.log("Tie game. Restarting.");
+    return true;
+  }
+}
+
+function ticTacToe(row, column) {
+  if ((row === '0' || row === '1' || row === '2') && (column === '0' || column === '1' || column === '2')) {
+
+	  if (board[row][column] === ' ') {
+
+	  	board[row][column] = playerTurn;
+
+	  	if (checkForWin() || checkForTie()) {
+		  	board = [
+		  	[' ', ' ', ' '],
+		  	[' ', ' ', ' '],
+		  	[' ', ' ', ' ']
+		  ];
+		  playerTurn = "X";
+	  	}
+	  	else {
+		  	if (playerTurn === 'X') {
+			  	playerTurn = "O";
+		  	}
+		  	else {
+		  	    playerTurn = "X";
+		  	}
+	  	}
+  	}
+
+  	  else {
+		  console.log("Spot is taken. Try again");
+	  }
+
+  }
+
+  else {
+	  	console.log("You did not enter a valid row or column. Try again");
+  	}
+
+  return playerTurn;
+};
 
 function getPrompt() {
   printBoard();
